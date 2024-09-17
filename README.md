@@ -79,6 +79,22 @@ Download a single video by providing its share URL. You can find the script in t
 
 Download multiple videos from a specific user profile. You can find the script in the following path: [profile_videos_downloader.py](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/TikTok/APP%20API%20Demo/profile_videos_downloader.py)
 
+#### Instagram
+
+> Instagram User Profile Data Online Viewer
+
+View the user profile data by providing the username. You can find the script in the following path: [instagram_user_info_app.py](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/Instagram/Web%20API%20Demo/instagram_user_info_app.py)
+
+<details><summary>🔎Click to see instagram_user_info_app.py screenshots</summary>
+
+Input:
+![](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/Instagram/Web%20API%20Demo/screenshots/instagram_user_info_app-1.png?raw=true)
+
+Output:
+![](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/Instagram/Web%20API%20Demo/screenshots/instagram_user_info_app-2.png?raw=true)
+
+</details>
+
 ## 5. License
 
 This project is licensed under the Apache License - see the [LICENSE](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/LICENSE) file for details.
