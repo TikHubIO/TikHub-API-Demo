@@ -8,7 +8,7 @@ This repository is a demonstration of how to use the TikHub.io API interface for
 
 - Python 3.7+
 - [TikHub.io](https://tikhub.io) account (to obtain your API Key)
-- TikHub Python SDK (included in the `requirements.txt`)
+- [TikHub Python SDK](https://github.com/TikHubIO/TikHub-API-Python-SDK) (included in the `requirements.txt`)
 
 ### Installation
 
@@ -18,13 +18,15 @@ This repository is a demonstration of how to use the TikHub.io API interface for
    git clone https://github.com/your-repo/TikHub-API-Demo.git
    cd TikHub-API-Demo
    ```
+
 2. Create and activate a virtual environmen:
-   
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # Linux/MacOS
-   .venv\Scripts\activate      # Windows
-   ```
+
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate  # Linux/MacOS
+    .venv\Scripts\activate      # Windows
+    ```
+
 3. Install the required dependencies:
    
    ```bash
@@ -53,45 +55,29 @@ If the `.env` file does not exist or the `API_KEY` is not set properly, the prog
 API_KEY=your_actual_api_key
 ```
 
-## 4. Running the Demo Scripts
+## 4. Demo Scripts
 
-This repository contains two example scripts:
+This repository contains multiple example scripts
 
-### 1. Douyin Single Video Downloader
+#### 抖音(Douyin)
 
-File Link: [single_video_downloader.py](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/Douyin/APP%20API%20Demo/single_video_downloader.py)
+> Douyin Single Video Downloader
 
-Download a single video by providing its share URL. You can find the script in the following path:
+Download a single video by providing its share URL. You can find the script in the following path: [single_video_downloader.py](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/Douyin/APP%20API%20Demo/single_video_downloader.py)
 
-```bash
-APP API Demo/single_video_downloader.py
-```
+> Douyin Profile Videos Downloader
 
-How to run:
+Download multiple videos from a specific user profile. You can find the script in the following path: [profile_videos_downloader.py](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/Douyin/APP%20API%20Demo/profile_videos_downloader.py)
 
-```bash
-python APP\ API\ Demo/single_video_downloader.py
-```
+#### TikTok
 
-This will fetch and download the video to the `downloads` folder.
+> TikTok Single Video Downloader
 
-### 2. Douyin Profile Videos Downloader
+Download a single video by providing its share URL. You can find the script in the following path: [single_video_downloader.py](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/TikTok/APP%20API%20Demo/single_video_downloader.py)
 
-File Link:  [profile_videos_downloader.py](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/Douyin/APP%20API%20Demo/profile_videos_downloader.py)
+> TikTok Profile Videos Downloader
 
-Download multiple videos from a specific user profile. You can find the script in the following path:
-
-```bash
-APP API Demo/profile_videos_downloader.py
-```
-
-How to run:
-
-```bash
-python APP\ API\ Demo/profile_videos_downloader.py
-```
-
-This will download all available videos from the profile to the `downloads` folder.
+Download multiple videos from a specific user profile. You can find the script in the following path: [profile_videos_downloader.py](https://github.com/TikHubIO/TikHub-API-Demo/blob/main/TikTok/APP%20API%20Demo/profile_videos_downloader.py)
 
 ## 5. License
 
