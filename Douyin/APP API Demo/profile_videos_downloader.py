@@ -61,9 +61,22 @@ async def get_profile_videos_info(sec_user_id: str):
     return all_videos_info
 
 
+def get_video_play_address(video_info):
+    """
+    Tries to retrieve the video play address from the available formats.
+    If 265 format is not found, it falls back to h264.
+    """
+    for format_key in ["play_addr_265", "play_addr_h264"]:
+        try:
+            return video_info["video"][format_key]["url_list"][0]
+        except (KeyError, IndexError):
+            continue
+    raise ValueError("No valid video URL found, this post is not a video, or the video has been deleted, or its an album.")
+
+
 if __name__ == "__main__":
     # 主页链接 | Profile URL
-    profile_url = "https://www.douyin.com/user/MS4wLjABAAAA0IN-uVRUnc2wngx0PrdinqOsomv4Weu0r39PDqfCgIk"
+    profile_url = "https://www.douyin.com/user/MS4wLjABAAAAH6qtuglSMr7givzADiJu6mr2S4ufCtRvIGvV1O1T85uqlCNX4SVct8TWIs8BU2x6"
     sec_user_id = profile_url.split("/")[-1]
     # 获取所有视频信息 | Get all videos info
     all_videos_info = asyncio.run(get_profile_videos_info(sec_user_id))
@@ -73,8 +86,8 @@ if __name__ == "__main__":
         # 从响应中获取视频链接 | Get video URL from response
         aweme_id = video_info["aweme_id"]
         try:
-            # $.data.aweme_detail.video.play_addr_265.url_list.[3]
-            play_addr = video_info["video"]["play_addr_265"]["url_list"][0]
+            # Try to get the video play address
+            play_addr = get_video_play_address(video_info)
         except Exception as e:
             # 如果报错大概是因为作品不是视频而是图集，或视频已被删除
             # If error, probably because the work is not a video but a set of pictures, or the video has been deleted
